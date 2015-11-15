@@ -1,4 +1,4 @@
-package es.david.aion;
+package es.david.aion.files;
 
 /**
  * Created by Ismael Ojeda Perez on 15/11/2015.
@@ -14,7 +14,7 @@ import java.net.URISyntaxException;
 public class LogMonitor
 {
     public void filterChat(String chat) throws URISyntaxException, IOException, InterruptedException {
-        String filename = this.getClass().getResource(chat).toString();
+        String filename = "/Users/davidsantiago/IdeaProjects/manakarna-timer/Chat.log";
         FileReader theFile = new FileReader(filename);
         BufferedReader br = new BufferedReader(theFile);
         while (true) {
@@ -23,6 +23,7 @@ public class LogMonitor
                 Thread.sleep(500);
             } else {
                 // do something with line
+
                 if (line.contains("Seal")) {
                     System.out.println(line);
                 }
