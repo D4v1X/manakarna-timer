@@ -1,10 +1,8 @@
 package es.david.aion;
 
-import es.david.aion.player.PlayerController;
+import es.david.aion.events.EventDrake;
+import es.david.aion.events.EventManager;
 import org.apache.log4j.Logger;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 /**
  * Created by davidsantiago on 14/11/15.
@@ -18,6 +16,7 @@ public class ManakarnaTimer{
 
 
     public static void main(String[] args) {
+        /*
         String parameter = "Hola log";
 
         if(logger.isDebugEnabled()){
@@ -31,7 +30,11 @@ public class ManakarnaTimer{
         logger.warn("This is warn : " + parameter);
         logger.error("This is error : " + parameter);
         logger.fatal("This is fatal : " + parameter);
+*/
 
+        EventManager eventManager = new EventManager("Manakarna");
+        eventManager.addEvent(new EventDrake());
+/*
 
         final String audioFilePath = "wav.wav";
         Integer audioTimer = 120;
@@ -51,6 +54,7 @@ public class ManakarnaTimer{
         timer.cancel();
 
         //player.play(audioFilePath);
+        */
     }
 
 
