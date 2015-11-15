@@ -1,6 +1,7 @@
 package es.david.aion.events;
 
 import es.david.aion.player.PlayerController;
+import org.apache.log4j.Logger;
 
 import java.util.TimerTask;
 
@@ -13,22 +14,31 @@ public abstract class Event extends TimerTask{
     private Notification notification;
     private PlayerController player;
     protected Integer interval;
+    private boolean first;
+
+    final static Logger logger = Logger.getLogger(Event.class);
 
     public Event(String name, Notification notification, Duration duration){
         this.name = name;
         this.notification = notification;
         this.player = new PlayerController();
         this.interval = duration.getDuration();
+        this.first = true;
     }
 
     public abstract void build();
 
     @Override
     public void run() {
+        if(first){
+            getPlayer().play(notification.getSound());
+            first = false;
+            logger.info(name+": First Notification");
+        }
         int instant = setInterval();
-        System.out.println(instant);
         if(instant < 1){
             getPlayer().play(notification.getSound());
+            logger.info(name+": Last Notification");
         }
         build();
     }
