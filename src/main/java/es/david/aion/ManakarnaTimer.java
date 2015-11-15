@@ -20,55 +20,18 @@ public class ManakarnaTimer{
     public static void main(String[] args) {
         // Load Config
         String logFileUri = ReadIni.load("src/main/resources/config.ini");
+
         // Create EventManager
-        EventManager eventManager = new EventManager("Manakarna");
-        eventManager.addEvent(new EventDrake());
         // Create Hashmap Events
+        EventManager eventManager = new EventManager("Manakarna");
+
         // Activate LogMonitor
-        LogMonitor.filterChat(logFileUri);
         // LogMonitor Search
         // LogMonitor addEvent
-        // Event Manager Execute events []
+        LogMonitor logMonitor = new LogMonitor();
+        logMonitor.addListener(eventManager);
+        logMonitor.filterChat(logFileUri);
 
-        /*
-        String parameter = "Hola log";
-
-        if(logger.isDebugEnabled()){
-            logger.debug("This is debug : " + parameter);
-        }
-
-        if(logger.isInfoEnabled()){
-            logger.info("This is info : " + parameter);
-        }
-
-        logger.warn("This is warn : " + parameter);
-        logger.error("This is error : " + parameter);
-        logger.fatal("This is fatal : " + parameter);
-*/
-
-
-/*
-
-        final String audioFilePath = "wav.wav";
-        Integer audioTimer = 120;
-        final PlayerController player = new PlayerController();
-        player.play(audioFilePath);
-
-        class SayHello extends TimerTask {
-            public void run() {
-                System.out.println("Hello World!");
-                player.play(audioFilePath);
-            }
-        }
-
-        // And From your main() method or any other method
-        Timer timer = new Timer();
-        timer.schedule(new SayHello(), 0, 1000);
-        timer.cancel();
-
-        //player.play(audioFilePath);
-        */
     }
-
 
 }
