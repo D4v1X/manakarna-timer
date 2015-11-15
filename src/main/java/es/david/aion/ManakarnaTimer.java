@@ -2,6 +2,8 @@ package es.david.aion;
 
 import es.david.aion.events.EventDrake;
 import es.david.aion.events.EventManager;
+import es.david.aion.files.LogMonitor;
+import es.david.aion.files.ReadIni;
 import org.apache.log4j.Logger;
 
 /**
@@ -17,11 +19,13 @@ public class ManakarnaTimer{
 
     public static void main(String[] args) {
         // Load Config
+        String logFileUri = ReadIni.load("src/main/resources/config.ini");
         // Create EventManager
         EventManager eventManager = new EventManager("Manakarna");
         eventManager.addEvent(new EventDrake());
         // Create Hashmap Events
         // Activate LogMonitor
+        LogMonitor.filterChat(logFileUri);
         // LogMonitor Search
         // LogMonitor addEvent
         // Event Manager Execute events []
