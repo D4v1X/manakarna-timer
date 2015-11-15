@@ -16,6 +16,16 @@ public class ManakarnaTimer{
 
 
     public static void main(String[] args) {
+        // Load Config
+        // Create EventManager
+        EventManager eventManager = new EventManager("Manakarna");
+        eventManager.addEvent(new EventDrake());
+        // Create Hashmap Events
+        // Activate LogMonitor
+        // LogMonitor Search
+        // LogMonitor addEvent
+        // Event Manager Execute events []
+
         /*
         String parameter = "Hola log";
 
@@ -32,8 +42,7 @@ public class ManakarnaTimer{
         logger.fatal("This is fatal : " + parameter);
 */
 
-        EventManager eventManager = new EventManager("Manakarna");
-        eventManager.addEvent(new EventDrake());
+
 /*
 
         final String audioFilePath = "wav.wav";
