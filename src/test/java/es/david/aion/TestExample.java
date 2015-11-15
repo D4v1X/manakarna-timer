@@ -1,3 +1,5 @@
+package es.david.aion;
+
 import org.junit.*;
 
 import java.util.ArrayList;
