@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Created by davidsantiago on 14/11/15.
  */
-public class PlayerController implements LineListener{
+public class PlayerController implements LineListener {
 
     boolean playCompleted;
 
@@ -29,17 +29,14 @@ public class PlayerController implements LineListener{
             audioClip.addLineListener(this);
             audioClip.open(audioStream);
 
-            for (int i = 0; i < 100000; i++) {
-                audioClip.start();
-                while (!playCompleted) {
-                    try {
-                        Thread.sleep(2000);
-                    } catch (InterruptedException ex) {
-                        ex.printStackTrace();
-                    }
+            audioClip.start();
+            while (!playCompleted) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    ex.printStackTrace();
                 }
             }
-
             audioClip.close();
 
         } catch (UnsupportedAudioFileException ex) {
