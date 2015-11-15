@@ -7,8 +7,15 @@ import java.util.Timer;
  */
 public class EventManager extends Timer {
 
+    public static final Integer DELAY = 1000;
+    public static final Integer PERIOD = 1000;
+
     public EventManager(String name) {
         super(name);
+    }
+
+    public void addEvent(Event event){
+        this.schedule(event, DELAY, PERIOD);
     }
 
 }
