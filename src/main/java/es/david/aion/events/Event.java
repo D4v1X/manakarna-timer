@@ -13,6 +13,7 @@ public abstract class Event extends TimerTask{
     private String name;
     private Notification notification;
     private PlayerController player;
+    private PlayerController player2;
     protected Integer interval;
     private boolean first;
 
@@ -22,6 +23,7 @@ public abstract class Event extends TimerTask{
         this.name = name;
         this.notification = notification;
         this.player = new PlayerController();
+        this.player2 = new PlayerController();
         this.interval = duration.getDuration();
         this.first = true;
     }
@@ -31,13 +33,13 @@ public abstract class Event extends TimerTask{
     @Override
     public void run() {
         if(first){
-            getPlayer().play(notification.getSound());
+            player.play(notification.getSound());
             first = false;
             logger.info(name+": First Notification");
         }
         int instant = setInterval();
         if(instant < 1){
-            getPlayer().play(notification.getSound());
+            player2.play(notification.getSound());
             logger.info(name+": Last Notification");
         }
         build();

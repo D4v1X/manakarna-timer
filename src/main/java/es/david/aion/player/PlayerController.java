@@ -59,12 +59,10 @@ public class PlayerController implements LineListener {
         LineEvent.Type type = event.getType();
 
         if (type == LineEvent.Type.START) {
-            System.out.println("Playback started.");
             playCompleted = false;
 
         } else if (type == LineEvent.Type.STOP) {
             playCompleted = true;
-            System.out.println("Playback completed.");
         }
     }
 }

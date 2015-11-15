@@ -20,6 +20,6 @@ public class ReadIni {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return (logDirName + "\\" + logFileName);
+        return (logDirName + logFileName);
     }
 }
