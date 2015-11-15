@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class LogMonitor
 {
-    public void filterChat(String logFile) {
+    public static void filterChat(String logFile) {
 
         try {
             FileReader theFile = new FileReader(logFile);
