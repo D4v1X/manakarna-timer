@@ -19,7 +19,7 @@ public class ManakarnaTimer{
 
     public static void main(String[] args) {
         // Load Config
-        String logFileUri = ReadIni.load("src/main/resources/config.ini");
+        String logFileUri = ReadIni.load();
 
         // Create EventManager
         // Create Hashmap Events
