@@ -7,11 +7,12 @@ import org.junit.Test;
  */
 public class ReadIniTest {
 
+    /*
     ReadIni readIni = new ReadIni();
     @Test
     public void testLoad() throws Exception {
-        String logFileName = readIni.load("src/main/resources/config.ini");
+        String logFileName = readIni.load("src/main/resources/ManakarnaConfigExample.ini");
         System.out.println(logFileName);
 
-    }
+    }*/
 }

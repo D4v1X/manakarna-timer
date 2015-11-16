@@ -12,6 +12,7 @@ import static org.junit.Assert.*;
  */
 public class FileToolTest {
 
+    /*
     @Test
     public void test(){
         FileTool fileTool = new FileTool();
@@ -22,6 +23,6 @@ public class FileToolTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
 }
